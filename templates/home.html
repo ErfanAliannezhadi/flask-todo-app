@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Todos{% endblock %}
+
+{% block body %}
+    {% for todo in todos %}
+        <div class="card my-3">
+            <div class="card-body">
+                <h3><a href="{{ url_for('todo_detail', id=todo.id) }}">{{ todo.content }}</a></h3>
+                <small>{{ todo.date }}</small>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
